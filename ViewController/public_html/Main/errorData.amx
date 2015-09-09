@@ -3,7 +3,7 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;10&quot;:&quot;15&quot;}"/>
       <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
         <amx:outputText value="#{bindings.code.inputValue}" id="ot1" inlineStyle="color:Red;"/>
       </amx:panelGroupLayout>

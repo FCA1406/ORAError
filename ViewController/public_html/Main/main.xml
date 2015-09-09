@@ -18,7 +18,7 @@
       <control-flow-case id="__2">
         <from-outcome>showCase</from-outcome>
         <to-activity-id>errorData</to-activity-id>
-        <transition>fade</transition>
+        <transition>flipRight</transition>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

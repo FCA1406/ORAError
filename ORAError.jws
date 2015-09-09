@@ -34,8 +34,8 @@
             <hash n="android_options">
                <value n="android_deploy_debug_mode" v="false"/>
                <value n="application_bundle_id" v="br.com.decade.oraerror"/>
-               <value n="version_code" v="6"/>
-               <value n="version_name" v="6.0.0"/>
+               <value n="version_code" v="7"/>
+               <value n="version_name" v="7.0.0"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>

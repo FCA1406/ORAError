@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
-                   version="3.0.0" name="ORA-Error" id="br.com.decade.ORAError" appControllerFolder="ApplicationController"
+                   version="7.0.0" name="ORA-Error" id="br.com.decade.ORAError" appControllerFolder="ApplicationController"
                    listener-class="br.com.decade.oraerror.application.LifeCycleListenerImpl">
   <adfmf:description>Oracle Error</adfmf:description>
   <adfmf:featureReference refId="main" id="fr1"/>
