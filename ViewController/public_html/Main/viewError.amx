@@ -3,56 +3,70 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;10&quot;:&quot;15&quot;}"/>
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
-        <amx:inputText value="#{pageFlowScope.mainBean.findError}" id="it1"
-                       styleClass="adfmf-inputText-search" keyboardDismiss="search"
-                       disabled="#{!bindings.findError.enabled}"
-                       valueChangeListener="#{bindings.findError.execute}"
-                       hintText="Find by CODE or ERROR"
-                       inlineStyle="width:#{deviceScope.hardware.screen.width-(deviceScope.hardware.screen.width*0.10)}px">
-          <?audit suppress oracle.maf.warning-missing-hintText?>
-        </amx:inputText>
+        <amx:outputText value="Oracle Database Error" id="ot1"/>
       </amx:panelGroupLayout>
     </amx:facet>
     <amx:facet name="primary">
       <!--amx:commandButton id="cb1"/-->
     </amx:facet>
     <amx:facet name="secondary">
-      <!--amx:commandLink id="cl1" actionListener="#{bindings.findError.execute}"
+      <amx:commandLink id="cl1" actionListener="#{bindings.findError.execute}"
                        disabled="#{!bindings.findError.enabled}">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <amx:image id="i1" source="/images/Find.png" inlineStyle="width:26px;height:26px"/>
-      </amx:commandLink-->
+      </amx:commandLink>
     </amx:facet>
-    <amx:panelGroupLayout id="pgl4" valign="middle" halign="center" layout="vertical">
-      <amx:listView var="row" value="#{bindings.ORAErrorVO.collectionModel}"
-                    fetchSize="#{bindings.ORAErrorVO.rangeSize}"
-                    selectionListener="#{bindings.ORAErrorVO.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
-                    bufferStrategy="viewport" id="lv1">
-        <amx:listItem id="li1" action="showCase">
+    <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
+      <amx:facet name="top">
+        <amx:tableLayout id="tl2" layout="weighted" halign="center" width="100%">
           <?audit suppress oracle.maf.warning-missing-shortDesc?>
-          <amx:tableLayout width="100%" id="tl1">
-            <amx:rowLayout id="rl2">
-              <amx:cellFormat width="15%" height="28px" rowSpan="2" id="cf2" halign="center" valign="middle">
-                <amx:image id="i2"
-                           source='#{row.favorite eq "Y"?"/images/BlackFavorite.png":"/images/WhiteFavorite.png"}'
-                           inlineStyle="width:24px;height:24px"/>
-              </amx:cellFormat>
-              <amx:cellFormat width="85%" height="28px" id="cf3">
-                <amx:outputText value="#{row.code}" id="ot4" inlineStyle="color:Red;"/>
-              </amx:cellFormat>
-            </amx:rowLayout>
-            <amx:rowLayout id="rl1">
-              <amx:cellFormat width="100%" height="12px" id="cf1">
-                <amx:outputText value="#{row.erro}" styleClass="adfmf-listItem-captionText" id="ot3"/>
-              </amx:cellFormat>
-            </amx:rowLayout>
-          </amx:tableLayout>
-          <amx:setPropertyListener id="spl1" from="#{row.favorite}" to="#{pageFlowScope.mainBean.makeFavorite}"/>
-        </amx:listItem>
-      </amx:listView>
-    </amx:panelGroupLayout>
+          <amx:rowLayout id="rl3">
+            <amx:cellFormat id="cf4" halign="center" valign="middle" width="100%">
+              <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+                <amx:inputText value="#{pageFlowScope.mainBean.findError}" id="it1" styleClass="adfmf-inputText-search"
+                               keyboardDismiss="search" disabled="#{!bindings.findError.enabled}"
+                               valueChangeListener="#{bindings.findError.execute}" hintText="Find by CODE or ERROR">
+                  <?audit suppress oracle.maf.warning-missing-hintText?>
+                </amx:inputText>
+              </amx:panelFormLayout>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+      </amx:facet>
+      <amx:facet name="center">
+        <amx:panelGroupLayout id="pgl4" valign="middle" halign="center" layout="vertical">
+          <amx:listView var="row" value="#{bindings.ORAErrorVO.collectionModel}"
+                        fetchSize="#{bindings.ORAErrorVO.rangeSize}"
+                        selectionListener="#{bindings.ORAErrorVO.collectionModel.makeCurrent}"
+                        showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1" action="showCase">
+              <?audit suppress oracle.maf.warning-missing-shortDesc?>
+              <amx:tableLayout width="100%" id="tl1">
+                <amx:rowLayout id="rl2">
+                  <amx:cellFormat width="44px" height="28px" rowSpan="2" id="cf2" halign="center" valign="middle">
+                    <amx:image id="i2"
+                               source='#{row.favorite eq "Y"?"/images/BlackFavorite.png":"/images/WhiteFavorite.png"}'
+                               inlineStyle="width:24px;height:24px"/>
+                  </amx:cellFormat>
+                  <amx:cellFormat height="28px" id="cf3">
+                    <amx:outputText value="#{row.code}" id="ot4" inlineStyle="color:Red;"/>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+                <amx:rowLayout id="rl1">
+                  <amx:cellFormat width="100%" height="12px" id="cf1">
+                    <amx:outputText value="#{row.erro}" styleClass="adfmf-listItem-captionText" id="ot3"/>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+              </amx:tableLayout>
+              <amx:setPropertyListener id="spl1" from="#{row.favorite}" to="#{pageFlowScope.mainBean.makeFavorite}"/>
+            </amx:listItem>
+          </amx:listView>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="bottom"/>
+    </amx:panelStretchLayout>
     <amx:facet name="footer">
       <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">

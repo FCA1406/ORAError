@@ -3,7 +3,7 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;10&quot;:&quot;15&quot;}"/>
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
         <amx:outputText value="#{bindings.code.inputValue}" id="ot1" inlineStyle="color:Red;"/>
       </amx:panelGroupLayout>
@@ -39,9 +39,11 @@
       </amx:panelFormLayout>
     </amx:panelGroupLayout>
     <amx:facet name="footer">
-      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;0&quot;:&quot;10&quot;}"/>
+      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
-        <amx:outputText value="11g Release 1" id="ot2"/>
+        <amx:goLink text="11g Release 1" id="gl2" url="http://docs.oracle.com/cd/B28359_01/index.htm">
+          <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        </amx:goLink>
       </amx:panelGroupLayout>
     </amx:facet>
   </amx:panelPage>
