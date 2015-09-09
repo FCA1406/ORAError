@@ -4,7 +4,7 @@
   <amx:panelPage id="pp1">
     <amx:facet name="header">
       <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
-      <amx:panelGroupLayout id="pgl1" valign="middle" halign="center" layout="horizontal">
+      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
         <amx:outputText value="Database Error" id="ot1"/>
       </amx:panelGroupLayout>
     </amx:facet>
@@ -16,23 +16,38 @@
     </amx:facet>
     <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
       <amx:facet name="top">
-        <amx:panelGroupLayout id="pgl5" layout="horizontal" halign="center" valign="middle">
-          <amx:panelGroupLayout id="pgl3" valign="middle" halign="center" layout="horizontal"
-                                styleClass="amx-style-groupbox">
-            <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
-              <amx:inputText value="#{pageFlowScope.mainBean.findError}" label="Search For:" id="it1"
-                             styleClass="adfmf-inputText-search" keyboardDismiss="search"
-                             disabled="#{!bindings.findError.enabled}"
-                             valueChangeListener="#{bindings.findError.execute}">
-                <?audit suppress oracle.maf.warning-missing-hintText?>
-              </amx:inputText>
-            </amx:panelFormLayout>
-            <amx:commandLink id="cl1" actionListener="#{bindings.findError.execute}"
-                             disabled="#{!bindings.findError.enabled}">
-              <?audit suppress oracle.maf.warning-missing-shortDesc?>
-              <amx:image id="i1" source="/images/Find.png" inlineStyle="width:36px;height:36px"/>
-            </amx:commandLink>
-          </amx:panelGroupLayout>
+        <amx:panelGroupLayout id="pgl5" layout="wrap" halign="center" valign="middle">
+          <amx:tableLayout id="tl2" layout="weighted" halign="center" width="100%">
+            <?audit suppress oracle.maf.warning-missing-shortDesc?>
+            <amx:rowLayout id="rl3">
+              <amx:cellFormat id="cf4" halign="center" valign="middle" width="100%">
+                <amx:panelGroupLayout id="pgl3" valign="middle" halign="center" layout="wrap"
+                                      styleClass="amx-style-groupbox">
+                  <amx:tableLayout id="tl3" layout="weighted" halign="center" width="100%">
+                    <amx:rowLayout id="rl4">
+                      <amx:cellFormat id="cf5" halign="center" valign="middle" width="80%">
+                        <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+                          <amx:inputText value="#{pageFlowScope.mainBean.findError}" label="Search For:" id="it1"
+                                         styleClass="adfmf-inputText-search" keyboardDismiss="search"
+                                         disabled="#{!bindings.findError.enabled}"
+                                         valueChangeListener="#{bindings.findError.execute}">
+                            <?audit suppress oracle.maf.warning-missing-hintText?>
+                          </amx:inputText>
+                        </amx:panelFormLayout>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf6" halign="center" valign="middle" width="20%">
+                        <amx:commandLink id="cl1" actionListener="#{bindings.findError.execute}"
+                                         disabled="#{!bindings.findError.enabled}">
+                          <?audit suppress oracle.maf.warning-missing-shortDesc?>
+                          <amx:image id="i1" source="/images/Find.png" inlineStyle="width:36px;height:36px"/>
+                        </amx:commandLink>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
         </amx:panelGroupLayout>
       </amx:facet>
       <amx:facet name="center">
@@ -65,7 +80,7 @@
     </amx:panelStretchLayout>
     <amx:facet name="footer">
       <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
-      <amx:panelGroupLayout id="pgl2" valign="middle" halign="center" layout="horizontal">
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
         <amx:goLink text="www.decade.com.br" id="gl2" url="http://www.decade.com.br/?page_id=7">
           <?audit suppress oracle.maf.warning-missing-shortDesc?>
         </amx:goLink>
