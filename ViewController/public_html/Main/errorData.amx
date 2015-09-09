@@ -39,8 +39,8 @@
       </amx:panelFormLayout>
     </amx:panelGroupLayout>
     <amx:facet name="footer">
-      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
-      <amx:panelGroupLayout id="pgl2" valign="middle" halign="center" layout="horizontal">
+      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;0&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
         <amx:outputText value="11g Release 1" id="ot2"/>
       </amx:panelGroupLayout>
     </amx:facet>
