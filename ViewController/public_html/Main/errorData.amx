@@ -3,8 +3,8 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
-      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
+      <amx:spacer id="s1" height="10"/>
+      <amx:panelGroupLayout id="pgl1" valign="middle" halign="center" layout="horizontal">
         <amx:outputText value="#{bindings.code.inputValue}" id="ot1"/>
       </amx:panelGroupLayout>
     </amx:facet>
@@ -35,8 +35,8 @@
       </amx:panelFormLayout>
     </amx:panelGroupLayout>
     <amx:facet name="footer">
-      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;0&quot;:&quot;10&quot;}"/>
-      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+      <amx:spacer id="s2" height="10"/>
+      <amx:panelGroupLayout id="pgl2" valign="middle" halign="center" layout="horizontal">
         <amx:outputText value="Database 11g Release 1" id="ot2"/>
       </amx:panelGroupLayout>
     </amx:facet>

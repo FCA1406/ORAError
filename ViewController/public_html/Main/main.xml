@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="US-ASCII" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="main">
     <default-activity>viewError</default-activity>
@@ -16,5 +16,8 @@
         <transition>fade</transition>
       </control-flow-case>
     </control-flow-rule>
+    <page-flow-scope-behavior>
+      <push-new/>
+    </page-flow-scope-behavior>
   </task-flow-definition>
 </adfc-mobile-config>
