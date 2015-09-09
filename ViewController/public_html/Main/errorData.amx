@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="#{bindings.code.inputValue}" id="ot1"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton actionListener="#{bindings.findError.execute}" text="Back"
+                         disabled="#{!bindings.findError.enabled}" id="cb1" action="__back">
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton actionListener="#{bindings.updateFavorite.execute}"
+                         text="#{bindings.favorite.inputValue eq &quot;Y&quot;?&quot;UnMark&quot;:&quot;Mark&quot;}"
+                         disabled="#{!bindings.updateFavorite.enabled}" id="cb2" action="__back">
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
+      </amx:commandButton>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl3" valign="middle" halign="center" layout="vertical">
+      <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+        <amx:panelLabelAndMessage label="Error:" id="plam1">
+          <amx:outputHtml value="#{bindings.erro.inputValue}" id="oh1"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Action:" id="plam2">
+          <amx:outputHtml value="#{bindings.action.inputValue}" id="oh2"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Cause:" id="plam3">
+          <amx:outputHtml value="#{bindings.cause.inputValue}" id="oh3"/>
+        </amx:panelLabelAndMessage>
+      </amx:panelFormLayout>
+    </amx:panelGroupLayout>
+    <amx:facet name="footer">
+      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;0&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="Database 11g Release 1" id="ot2"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+  </amx:panelPage>
+</amx:view>

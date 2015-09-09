@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="Oracle Error" id="ot1"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+    <amx:facet name="primary">
+      <!--amx:commandButton id="cb1"/-->
+    </amx:facet>
+    <amx:facet name="secondary">
+      <!--amx:commandButton id="cb2"/-->
+    </amx:facet>
+    <amx:panelStretchLayout id="psl1" scrollPolicy="scroll">
+      <amx:facet name="top">
+        <amx:panelGroupLayout id="pgl5" layout="wrap" halign="center" valign="middle">
+          <amx:tableLayout id="tl2" layout="weighted" halign="center" width="100%">
+            <?audit suppress oracle.maf.warning-missing-shortDesc?>
+            <amx:rowLayout id="rl3">
+              <amx:cellFormat id="cf4">
+                <amx:panelGroupLayout id="pgl3" valign="middle" halign="center" layout="wrap"
+                                      styleClass="amx-style-groupbox">
+                  <amx:tableLayout id="tl3" layout="weighted" halign="center" width="100%">
+                    <amx:rowLayout id="rl4">
+                      <amx:cellFormat id="cf5" halign="center" valign="middle" width="100%">
+                        <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
+                          <amx:inputText value="#{bindings.oraError.inputValue}" label="Search For:" id="it1"
+                                         styleClass="adfmf-inputText-search" keyboardDismiss="search"
+                                         valueChangeListener="#{bindings.findError.execute}">
+                            <?audit suppress oracle.maf.warning-missing-hintText?>
+                          </amx:inputText>
+                        </amx:panelFormLayout>
+                      </amx:cellFormat>
+                      <amx:cellFormat id="cf6" halign="center" valign="middle" width="100%">
+                        <amx:commandButton actionListener="#{bindings.findError.execute}" text="Go!"
+                                           disabled="#{!bindings.findError.enabled}" id="cb3">
+                          <?audit suppress oracle.maf.warning-missing-shortDesc?>
+                        </amx:commandButton>
+                      </amx:cellFormat>
+                    </amx:rowLayout>
+                  </amx:tableLayout>
+                </amx:panelGroupLayout>
+              </amx:cellFormat>
+            </amx:rowLayout>
+          </amx:tableLayout>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="center">
+        <amx:panelGroupLayout id="pgl4" valign="middle" halign="center" layout="vertical">
+          <amx:listView var="row" value="#{bindings.ORAErrorVO.collectionModel}"
+                        fetchSize="#{bindings.ORAErrorVO.rangeSize}"
+                        selectionListener="#{bindings.ORAErrorVO.collectionModel.makeCurrent}"
+                        showMoreStrategy="autoScroll" bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li1" action="showCase">
+              <?audit suppress oracle.maf.warning-missing-shortDesc?>
+              <amx:tableLayout width="100%" id="tl1">
+                <amx:rowLayout id="rl2">
+                  <amx:cellFormat width="10px" rowSpan="2" id="cf2"/>
+                  <amx:cellFormat width="100%" height="28px" id="cf3">
+                    <amx:outputText value="#{row.code}" id="ot4"/>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+                <amx:rowLayout id="rl1">
+                  <amx:cellFormat width="100%" height="12px" id="cf1">
+                    <amx:outputText value="#{row.erro}" styleClass="adfmf-listItem-captionText" id="ot3"/>
+                  </amx:cellFormat>
+                </amx:rowLayout>
+              </amx:tableLayout>
+            </amx:listItem>
+          </amx:listView>
+        </amx:panelGroupLayout>
+      </amx:facet>
+      <amx:facet name="bottom"/>
+    </amx:panelStretchLayout>
+    <amx:facet name="footer">
+      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
+        <amx:goLink text="www.decade.com.br" id="gl2" url="http://www.decade.com.br/?page_id=7">
+          <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        </amx:goLink>
+      </amx:panelGroupLayout>
+    </amx:facet>
+  </amx:panelPage>
+</amx:view>
