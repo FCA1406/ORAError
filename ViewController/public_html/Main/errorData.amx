@@ -3,9 +3,9 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
   <amx:panelPage id="pp1">
     <amx:facet name="header">
-      <amx:spacer id="s1" height="10"/>
-      <amx:panelGroupLayout id="pgl1" valign="middle" halign="center" layout="horizontal">
-        <amx:outputText value="#{bindings.code.inputValue}" id="ot1"/>
+      <amx:spacer id="s1" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
+      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center" valign="middle">
+        <amx:outputText value="#{bindings.code.inputValue}" id="ot1" inlineStyle="color:Red;"/>
       </amx:panelGroupLayout>
     </amx:facet>
     <amx:facet name="primary">
@@ -15,11 +15,15 @@
       </amx:commandButton>
     </amx:facet>
     <amx:facet name="secondary">
-      <amx:commandButton actionListener="#{bindings.updateFavorite.execute}"
-                         text="#{bindings.favorite.inputValue eq &quot;Y&quot;?&quot;UnMark&quot;:&quot;Mark&quot;}"
-                         disabled="#{!bindings.updateFavorite.enabled}" id="cb2" action="__back">
+      <amx:commandLink id="cl1" disabled="#{!bindings.makeFavorite.enabled}">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
-      </amx:commandButton>
+        <amx:image id="i1"
+                   source='#{pageFlowScope.mainBean.makeFavorite eq "Y"?"/images/BlackFavorite.png":"/images/WhiteFavorite.png"}'
+                   inlineStyle="width:26px;height:26px"/>
+        <amx:setPropertyListener id="spl1" from='#{pageFlowScope.mainBean.makeFavorite eq "Y"?"N":"Y"}'
+                                 to="#{pageFlowScope.mainBean.makeFavorite}"/>
+        <amx:actionListener id="al1" binding="#{bindings.makeFavorite.execute}"/>
+      </amx:commandLink>
     </amx:facet>
     <amx:panelGroupLayout id="pgl3" valign="middle" halign="center" layout="vertical">
       <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="start">
@@ -35,9 +39,9 @@
       </amx:panelFormLayout>
     </amx:panelGroupLayout>
     <amx:facet name="footer">
-      <amx:spacer id="s2" height="10"/>
+      <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl2" valign="middle" halign="center" layout="horizontal">
-        <amx:outputText value="Database 11g Release 1" id="ot2"/>
+        <amx:outputText value="11g Release 1" id="ot2"/>
       </amx:panelGroupLayout>
     </amx:facet>
   </amx:panelPage>

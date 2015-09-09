@@ -9,9 +9,11 @@
                       BeanClass="br.com.decade.oraerror.server.ORAErrorBO" id="ORAErrorVOIterator"/>
   </executables>
   <bindings>
-    <methodAction id="findError" RequiresUpdateModel="true" Action="invokeMethod" MethodName="findError"
+    <methodAction id="makeFavorite" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="makeFavorite"
                   IsViewObjectMethod="false" DataControl="ORAErrorDC" InstanceName="data.ORAErrorDC.dataProvider">
-      <NamedData NDName="oraError" NDType="java.lang.String"/>
+      <NamedData NDName="code" NDValue="#{bindings.code.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="favorite" NDValue="#{pageFlowScope.mainBean.makeFavorite}" NDType="java.lang.String"/>
     </methodAction>
     <attributeValues IterBinding="ORAErrorVOIterator" id="code">
       <AttrNames>
@@ -38,10 +40,9 @@
         <Item Value="favorite"/>
       </AttrNames>
     </attributeValues>
-    <methodAction id="updateFavorite" RequiresUpdateModel="true" Action="invokeMethod" MethodName="updateFavorite"
+    <methodAction id="findError" RequiresUpdateModel="true" Action="invokeMethod" MethodName="findError"
                   IsViewObjectMethod="false" DataControl="ORAErrorDC" InstanceName="data.ORAErrorDC.dataProvider">
-      <NamedData NDName="code" NDValue="#{bindings.code.inputValue}" NDType="java.lang.String"/>
-      <NamedData NDName="favorite" NDValue="#{bindings.favorite.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="oraError" NDValue="#{pageFlowScope.mainBean.findError}" NDType="java.lang.String"/>
     </methodAction>
   </bindings>
 </pageDefinition>
