@@ -34,7 +34,7 @@
             <hash n="android_options">
                <value n="android_deploy_debug_mode" v="false"/>
                <value n="application_bundle_id" v="br.com.decade.oraerror"/>
-               <value n="version_code" v="3"/>
+               <value n="version_code" v="4"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -122,7 +122,7 @@
             <hash n="iosDeploymentOptions">
                <value n="appBundleId" v="br.com.decade.oraerror"/>
                <value n="debugFlag" v="false"/>
-               <value n="simulatorTarget" v="iPhone 4s (iOS 8.3 - iPhone 4s)"/>
+               <value n="simulatorTarget" v="iPhone 4s (iOS 8.4 - iPhone 4s)"/>
             </hash>
             <url n="jarURL" path="deploy/iOS/iOS.jar/"/>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.ios.McIosFrameworkProfile"/>
