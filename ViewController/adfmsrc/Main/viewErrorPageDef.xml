@@ -3,9 +3,6 @@
                 Package="Main">
   <parameters/>
   <executables>
-    <variableIterator id="variables">
-      <variable Type="java.lang.String" Name="findError_oraError" IsQueriable="false"/>
-    </variableIterator>
     <iterator Binds="root" RangeSize="25" DataControl="ORAErrorDC" id="ORAErrorDCIterator"/>
     <accessorIterator MasterBinding="ORAErrorDCIterator" Binds="ORAErrorVO" RangeSize="25" DataControl="ORAErrorDC"
                       BeanClass="br.com.decade.oraerror.server.ORAErrorBO" id="ORAErrorVOIterator"/>
@@ -13,18 +10,14 @@
   <bindings>
     <methodAction id="findError" RequiresUpdateModel="true" Action="invokeMethod" MethodName="findError"
                   IsViewObjectMethod="false" DataControl="ORAErrorDC" InstanceName="data.ORAErrorDC.dataProvider">
-      <NamedData NDName="oraError" NDType="java.lang.String" NDValue="${bindings.findError_oraError}"/>
+      <NamedData NDName="oraError" NDValue="#{pageFlowScope.mainBean.findError}" NDType="java.lang.String"/>
     </methodAction>
-    <attributeValues IterBinding="variables" id="oraError">
-      <AttrNames>
-        <Item Value="findError_oraError"/>
-      </AttrNames>
-    </attributeValues>
     <tree IterBinding="ORAErrorVOIterator" id="ORAErrorVO">
       <nodeDefinition DefName="br.com.decade.oraerror.server.ORAErrorBO" Name="ORAErrorVO0">
         <AttrNames>
           <Item Value="code"/>
           <Item Value="erro"/>
+          <Item Value="favorite"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

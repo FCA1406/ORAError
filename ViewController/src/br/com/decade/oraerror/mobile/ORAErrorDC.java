@@ -19,7 +19,7 @@ import oracle.adfmf.util.Utility;
 public class ORAErrorDC {
     private ORAErrorBO[] ORAErrorVO;
 
-    protected ProviderChangeSupport providerChangeSupport = new ProviderChangeSupport(this);
+    private ProviderChangeSupport providerChangeSupport = new ProviderChangeSupport(this);
 
     public ORAErrorDC() {
         super();
@@ -29,6 +29,7 @@ public class ORAErrorDC {
 
     public void setORAErrorVO(ORAErrorBO[] ORAErrorVO) {
         this.ORAErrorVO = ORAErrorVO;
+        providerChangeSupport.fireProviderRefresh("ORAErrorVO");
     }
 
     public ORAErrorBO[] getORAErrorVO() {
@@ -71,7 +72,6 @@ public class ORAErrorDC {
                                                                      ,"navigator.notification.alert"
                                                                      ,new Object[] { "DB: IS DOWN OR DEAD", "null", "Warning", "OK" });
         }
-        providerChangeSupport.fireProviderRefresh("ORAErrorVO");
 
         return (ORAErrorBO[]) listError.toArray(new ORAErrorBO[listError.size()]);
     }
@@ -80,28 +80,19 @@ public class ORAErrorDC {
         setORAErrorVO(getORAErrorDB(oraError));
     }
 
-    public void updateFavorite (String code, String favorite) {
-        String doDML;
-
-        if (favorite.equals("Y")) {
-            doDML = "UPDATE ora_error SET favorite = 'N' WHERE code = ?;";
-        } else {
-            doDML = "UPDATE ora_error SET favorite = 'Y' WHERE code = ?;";
-        }
-
+    public void makeFavorite (String code, String favorite) {
         try {
             Connection conn = ConnectionFactory.getConnection();
             conn.setAutoCommit(false);
 
-            PreparedStatement psDML = conn.prepareStatement(doDML);
+            PreparedStatement psDML = conn.prepareStatement("UPDATE ora_error SET favorite = ? WHERE code = ?;");
 
-            psDML.setString(1, code);
+            psDML.setString(1, favorite);
+            psDML.setString(2, code);
 
             psDML.execute();
 
             conn.commit();
-
-            setORAErrorVO(getORAErrorDB(new String("")));
         } catch (Exception ex) {
             Utility.ApplicationLogger.severe(ex.getMessage());
 
