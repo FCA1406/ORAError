@@ -30,11 +30,11 @@
         <amx:panelLabelAndMessage label="Error:" id="plam1">
           <amx:outputHtml value="#{bindings.erro.inputValue}" id="oh1"/>
         </amx:panelLabelAndMessage>
-        <amx:panelLabelAndMessage label="Action:" id="plam2">
-          <amx:outputHtml value="#{bindings.action.inputValue}" id="oh2"/>
-        </amx:panelLabelAndMessage>
         <amx:panelLabelAndMessage label="Cause:" id="plam3">
           <amx:outputHtml value="#{bindings.cause.inputValue}" id="oh3"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="Action:" id="plam2">
+          <amx:outputHtml value="#{bindings.action.inputValue}" id="oh2"/>
         </amx:panelLabelAndMessage>
       </amx:panelFormLayout>
     </amx:panelGroupLayout>
