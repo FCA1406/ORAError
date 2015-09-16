@@ -4,21 +4,21 @@ package br.com.decade.oraerror.server;
 public class ORAErrorBO {
     private String code;
     private String erro;
-    private String action;
     private String cause;
+    private String action;
     private String favorite;
 
     public ORAErrorBO() {
         super();
     }
 /*
-    public ORAErrorBO(String code, String erro, String action, String cause, String favorite) {
+    public ORAErrorBO(String code, String erro, String cause, String action, String favorite) {
         super();
 
         this.code = code;
         this.erro = erro;
-        this.action = action;
         this.cause = cause;
+        this.action = action;
         this.favorite = favorite;
     }
 */
@@ -38,20 +38,20 @@ public class ORAErrorBO {
         return erro;
     }
 
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public String getAction() {
-        return action;
-    }
-
     public void setCause(String cause) {
         this.cause = cause;
     }
 
     public String getCause() {
         return cause;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public String getAction() {
+        return action;
     }
 
     public void setFavorite(String favorite) {
