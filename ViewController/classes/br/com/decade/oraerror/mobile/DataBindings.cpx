@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.13.26" id="DataBindings"
+             SeparateXMLFiles="false" Package="br.com.decade.oraerror.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/Main/viewError.amx" usageId="br_com_decade_oraerror_mobile_viewErrorPageDef"/>
+    <page path="/Main/errorData.amx" usageId="br_com_decade_oraerror_mobile_errorDataPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="br_com_decade_oraerror_mobile_viewErrorPageDef" path="Main.viewErrorPageDef"/>
+    <page id="br_com_decade_oraerror_mobile_errorDataPageDef" path="Main.errorDataPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ORAErrorDC" path="br.com.decade.oraerror.mobile.ORAErrorDC"/>
+  </dataControlUsages>
+</Application>
