@@ -70,7 +70,7 @@
     <amx:facet name="footer">
       <amx:spacer id="s2" height="#{deviceScope.device.os eq &quot;Android&quot;?&quot;5&quot;:&quot;10&quot;}"/>
       <amx:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="middle">
-        <amx:goLink text="www.decade.com.br" id="gl2" url="http://www.decade.com.br/?page_id=7">
+        <amx:goLink text="www.decade.com.br" id="gl2" url="http://blog.decade.com.br/?page_id=7">
           <?audit suppress oracle.maf.warning-missing-shortDesc?>
         </amx:goLink>
       </amx:panelGroupLayout>

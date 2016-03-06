@@ -34,8 +34,8 @@
             <hash n="android_options">
                <value n="android_deploy_debug_mode" v="false"/>
                <value n="application_bundle_id" v="br.com.decade.oraerror"/>
-               <value n="version_code" v="9"/>
-               <value n="version_name" v="9.0.0"/>
+               <value n="version_code" v="10"/>
+               <value n="version_name" v="10.0.0"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -123,9 +123,42 @@
             <hash n="iosDeploymentOptions">
                <value n="appBundleId" v="br.com.decade.oraerror"/>
                <value n="debugFlag" v="false"/>
-               <value n="simulatorTarget" v="iPhone 4s (iOS 8.4 - iPhone 4s)"/>
+               <value n="simulatorDeviceId" v="2E68B70B-0E17-4AFD-8AB0-D6EBED3EBCC9"/>
+               <value n="simulatorTarget" v="iPhone 4s (iOS 9.2 - iPhone 4s)"/>
             </hash>
             <url n="jarURL" path="deploy/iOS/iOS.jar/"/>
+            <hash n="mnfImageOptions">
+               <list n="deviceTypes">
+                  <hash>
+                     <value n="deviceTypeName" v="iPad"/>
+                  </hash>
+                  <hash>
+                     <value n="deviceTypeName" v="iPad Mini"/>
+                  </hash>
+                  <hash>
+                     <value n="deviceTypeName" v="iPad Retina"/>
+                  </hash>
+                  <hash>
+                     <value n="deviceTypeName" v="iPhone 5"/>
+                  </hash>
+                  <hash>
+                     <value n="deviceTypeName" v="iPhone Retina"/>
+                  </hash>
+               </list>
+               <value n="imageResourceBaseDir" v="/Users/fabiano/Documents/THETA/decade/ORAError/resources/ios/"/>
+               <value n="IPAD_NON_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76.png"/>
+               <value n="IPAD_NON_RETINA_7_SETTINGS" v="resources/ios/Icon-29.png"/>
+               <value n="IPAD_NON_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40.png"/>
+               <value n="IPAD_PRO_RETINA_APP_IMAGE" v="resources/ios/Icon-83.5@2x.png"/>
+               <value n="IPAD_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76@2x.png"/>
+               <value n="IPAD_RETINA_7_SETTINGS" v="resources/ios/Icon-29@2x.png"/>
+               <value n="IPAD_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40@2x.png"/>
+               <value n="IPHONE_6_PLUS_APP_IMAGE" v="resources/ios/Icon-60@3x.png"/>
+               <value n="IPHONE_6_PLUS_SETTINGS" v="resources/ios/Icon-29@3x.png"/>
+               <value n="IPHONE_6_PLUS_SPOTLIGHT" v="resources/ios/Icon-40@3x.png"/>
+               <value n="IPHONE_RETINA_7_APP_IMAGE" v="resources/ios/Icon-120.png"/>
+               <value n="itunesArtwork" v="resources/ios/iTunesArtwork.png"/>
+            </hash>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.ios.McIosFrameworkProfile"/>
             <value n="profileName" v="iOS"/>
          </hash>
@@ -160,6 +193,7 @@
    </hash>
    <hash n="shared-project-properties">
       <hash n="oracle.jdeveloper.runner.RunConfigurations">
+         <value n="activeName" v="iOS Simulator"/>
          <hash n="runConfigurationDefinitions">
             <hash n="Android Device">
                <hash n="Android_options">
